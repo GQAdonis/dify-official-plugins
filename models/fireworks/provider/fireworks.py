@@ -16,8 +16,9 @@ class FireworksProvider(ModelProvider):
         """
         try:
             model_instance = self.get_model_instance(ModelType.LLM)
+            # Use firefunction-v2 as it's a Fireworks-specific model that should always be available
             model_instance.validate_credentials(
-                model="accounts/fireworks/models/llama-v3p1-8b-instruct", credentials=credentials
+                model="accounts/fireworks/models/firefunction-v2", credentials=credentials
             )
         except CredentialsValidateFailedError as ex:
             raise ex

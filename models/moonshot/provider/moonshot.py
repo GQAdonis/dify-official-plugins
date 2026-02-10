@@ -16,7 +16,8 @@ class MoonshotProvider(ModelProvider):
         """
         try:
             model_instance = self.get_model_instance(ModelType.LLM)
-            model_instance.validate_credentials(model="moonshot-v1-8k", credentials=credentials)
+            # Use moonshot-v1-32k as it's more commonly available than the 8k variant
+            model_instance.validate_credentials(model="moonshot-v1-32k", credentials=credentials)
         except CredentialsValidateFailedError as ex:
             raise ex
         except Exception as ex:
