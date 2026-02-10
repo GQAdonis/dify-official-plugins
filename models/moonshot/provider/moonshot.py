@@ -16,8 +16,8 @@ class MoonshotProvider(ModelProvider):
         """
         try:
             model_instance = self.get_model_instance(ModelType.LLM)
-            # Use moonshot-v1-32k as it's more commonly available than the 8k variant
-            model_instance.validate_credentials(model="moonshot-v1-32k", credentials=credentials)
+            # Use kimi-k2.5 as it's accessible with the API key
+            model_instance.validate_credentials(model="kimi-k2.5", credentials=credentials)
         except CredentialsValidateFailedError as ex:
             raise ex
         except Exception as ex:
