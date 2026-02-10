@@ -16,9 +16,9 @@ class FireworksProvider(ModelProvider):
         """
         try:
             model_instance = self.get_model_instance(ModelType.LLM)
-            # Use firefunction-v2 as it's a Fireworks-specific model that should always be available
+            # Use kimi-k2p5 as it's accessible with the API key
             model_instance.validate_credentials(
-                model="accounts/fireworks/models/firefunction-v2", credentials=credentials
+                model="accounts/fireworks/models/kimi-k2p5", credentials=credentials
             )
         except CredentialsValidateFailedError as ex:
             raise ex
